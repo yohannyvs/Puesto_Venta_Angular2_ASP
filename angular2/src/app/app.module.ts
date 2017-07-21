@@ -19,6 +19,7 @@ import { AngularFireModule } from 'angularfire2';
 import { environment } from '../environments/environment';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+import { LoginComponent } from './components/shared/login/login.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
     BodyComponent,
     ProductosComponent,
     ChatComponent,
-    CarritoComponent
+    CarritoComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

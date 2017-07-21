@@ -1,4 +1,14 @@
 
-<app-navbar></app-navbar>
+<div *ngIf=" !cs.usuario " class="anmated fadeIn fast">
 
-<app-body></app-body>
+  <app-login></app-login>
+  
+</div>
+
+<div *ngIf=" cs.usuario ">
+
+  <app-navbar></app-navbar>
+
+  <app-body></app-body>
+
+</div>
