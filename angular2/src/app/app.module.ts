@@ -9,6 +9,7 @@ import { BodyComponent } from './components/body/body.component';
 import { ProductosComponent } from './components/body/productos/productos.component';
 import { ChatComponent } from './components/body/chat/chat.component';
 import { CarritoComponent } from './components/body/carrito/carrito.component';
+import { FormsModule } from '@angular/forms';
 
 //Services
 
@@ -30,6 +31,7 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
