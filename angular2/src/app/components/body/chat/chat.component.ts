@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
-import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
+import { ChatService } from '../../services/chat.service'
+
 
 @Component({
   selector: 'app-chat',
@@ -9,16 +10,22 @@ import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/databa
 })
 export class ChatComponent implements OnInit {
 
-  chats: FirebaseListObservable<any[]>;
-
   mensaje:string="";
+  elemento:any;
 
-  constructor( af: AngularFireDatabase )
+  constructor( public cs:ChatService )
   {
-    this.chats = af.list('/chats');
+    this.cs.cargarMensajes()
+        .subscribe( ()=>{
+          console.log("Mensajes cargados...");
+
+          setTimeout( ()=>this.elemento.scrollTop = this.elemento.scrollHeight, 50 );
+
+        } )
   }
 
   ngOnInit() {
+    this.elemento = document.getElementById("app-mensajes");
   }
 
   enviar()
@@ -28,6 +35,10 @@ export class ChatComponent implements OnInit {
       return;
     }
 
-    console.log(this.mensaje)
+    this.cs.agregarMensaje( this.mensaje )
+        .then( ()=>console.log("Hecho") )
+        .catch( (error)=>console.error(error) )
+
+        this.mensaje = "";
   }
 }

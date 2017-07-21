@@ -12,6 +12,7 @@ import { CarritoComponent } from './components/body/carrito/carrito.component';
 import { FormsModule } from '@angular/forms';
 
 //Services
+import { ChatService } from './components/services/chat.service';
 
 //Firebase
 import { AngularFireModule } from 'angularfire2';
@@ -36,7 +37,9 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
     AngularFireDatabaseModule,
     AngularFireAuthModule,
   ],
-  providers: [],
+  providers: [
+    ChatService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
