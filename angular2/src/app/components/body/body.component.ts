@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ChatService } from '../services/chat.service';
 
 @Component({
   selector: 'app-body',
@@ -7,7 +6,7 @@ import { ChatService } from '../services/chat.service';
 })
 export class BodyComponent implements OnInit {
 
-  constructor( public cs:ChatService ) { }
+  constructor( ) { }
 
   ngOnInit() {
   }

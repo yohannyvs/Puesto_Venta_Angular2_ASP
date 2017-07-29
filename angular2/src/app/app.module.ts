@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpModule } from '@angular/http';
 
 //Components
 
@@ -13,6 +14,7 @@ import { FormsModule } from '@angular/forms';
 
 //Services
 import { ChatService } from './components/services/chat.service';
+import {PuntoVentaService} from './components/services/punto-venta.service';
 
 //Firebase
 import { AngularFireModule } from 'angularfire2';
@@ -35,12 +37,14 @@ import { LoginComponent } from './components/shared/login/login.component';
   imports: [
     BrowserModule,
     FormsModule,
+    HttpModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
   ],
   providers: [
-    ChatService
+    ChatService,
+    PuntoVentaService
   ],
   bootstrap: [AppComponent]
 })

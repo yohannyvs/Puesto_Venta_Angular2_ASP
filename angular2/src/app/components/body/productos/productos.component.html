@@ -1,3 +1,23 @@
-<p>
-  productos works!
-</p>
+<div class="container">
+  <div class="row inline">
+    <div class="card w-100" *ngFor="let producto of _puntoventaservice.productos">
+
+      <div class="card-block form-control">
+        <p class="card-title">Producto: &nbsp;&nbsp;&nbsp; {{ producto.Nombreprod }} </p>
+        <hr>
+
+        <p class="card-title">Marca:  &nbsp;&nbsp;&nbsp; {{ producto.Marca }}</p>
+        <hr>
+
+        <p>Precio: &nbsp;&nbsp;&nbsp; {{ producto.Precio }} </p>
+        <hr>
+
+        <div class="offset-md-10">
+          <a href="#" class="btn btn-primary">Button</a>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
